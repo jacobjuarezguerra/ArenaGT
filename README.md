@@ -1,72 +1,99 @@
-# ArenaGT — Gestión de copas deportivas
+# 🏆 ArenaGT — Gestión de Copas Deportivas
 
-Aplicación de consola en Java desarrollada para el **Lab 4 - Polimorfismo** del curso
-**CC2008 - Programación Orientada a Objetos** (Universidad del Valle de Guatemala,
-Ciclo 2, 2026).
+![Java](https://img.shields.io/badge/Java-17%2B-ED8B00?style=flat&logo=openjdk&logoColor=white)
+![Paradigma](https://img.shields.io/badge/Paradigma-POO%20%7C%20Polimorfismo-007396?style=flat)
+![Universidad](https://img.shields.io/badge/UVG-CC2008%20(Ciclo%202%2C%202026)-1E6B38?style=flat)
 
-## Contenido de la entrega
+Aplicación de consola desarrollada en Java para la gestión integral de torneos deportivos empresariales, cálculo polimórfico de puntuaciones, criterios de desempate y rankings por empresa.
 
-- `src/arena/…` — código fuente Java (34 archivos `.java`)
-- `docs/uml/diagrama-clases.png` — diagrama de clases UML (renderizado)
-- `ArenaGT_Entrega.pdf` — análisis, diagrama UML y evidencia de las pruebas
-- `README.md` — este archivo
+Este proyecto corresponde al **Lab 4 — Polimorfismo** del curso **CC2008 - Programación Orientada a Objetos** de la **Universidad del Valle de Guatemala** (Ciclo 2, 2026).
 
-La carpeta `out/` no forma parte de la entrega: la crea la compilación con las
-clases compiladas (36 archivos `.class`: 34 clases y 2 clases anidadas).
+---
 
-## Requisitos
+## 📁 Contenido de la entrega
 
-- Java JDK 17 o superior (probado con JDK 21).
-- No se requieren librerías externas, bases de datos ni archivos de datos. Todo
-  se conserva en memoria.
+```text
+ArenaGT/
+├── src/
+│   └── arena/                  # Código fuente Java (34 archivos .java)
+├── docs/
+│   └── uml/
+│       └── diagrama-clases.png # Diagrama de clases UML renderizado
+├── ArenaGT_Entrega.pdf         # Documento con análisis, diagrama UML y evidencia de pruebas
+└── README.md                   # Documentación del proyecto
+```
 
-## Compilación
+> **Nota sobre compilación:** La carpeta `out/` no forma parte de la entrega en el repositorio; se genera automáticamente al compilar y contiene los 36 archivos `.class` resultantes (34 clases principales y 2 clases anidadas).
 
-Desde la raíz del proyecto (la carpeta que contiene `src/`):
+---
 
-```powershell
+## ⚙️ Requisitos
+
+* **Java Development Kit (JDK):** Versión **17 o superior** (probado y verificado con **JDK 21**).
+* **Dependencias:** Ninguna. No requiere librerías externas (como JUnit), bases de datos ni archivos externos; toda la información se gestiona en memoria durante la ejecución.
+
+---
+
+## 🚀 Compilación y Ejecución
+
+Abre una terminal en la **raíz del proyecto** (el directorio que contiene la carpeta `src/`). Los siguientes comandos funcionan de manera idéntica en **Windows (PowerShell/CMD)**, **Linux** y **macOS**.
+
+### 1. Compilar el proyecto
+
+```bash
 javac -encoding UTF-8 -d out src/arena/*.java src/arena/*/*.java
 ```
 
-En Linux o macOS funciona el mismo comando desde la terminal.
+### 2. Ejecutar el programa principal
 
-## Ejecución
-
-### Programa principal
-
-```powershell
+```bash
 java -cp out arena.Principal
 ```
 
-El menú permanece disponible hasta que el usuario elige la opción `0) Salir`.
+El menú interactivo permanecerá activo en consola hasta que selecciones la opción `0) Salir`.
 
-### Suite de pruebas (sin JUnit)
+### 3. Ejecutar la suite de pruebas
 
-```powershell
+El proyecto incluye una suite de pruebas automatizadas propia (sin dependencias de JUnit):
+
+```bash
 java -cp out arena.pruebas.PruebasArenaGT
 ```
 
-Resultado esperado: `Pruebas ejecutadas: 14, fallidas: 0`.
+**Salida esperada:**
 
-## Datos iniciales
+```text
+Pruebas ejecutadas: 14, fallidas: 0
+```
 
-El programa inicia con seis participantes de tres empresas (Alfa, Beta, Gamma) y
-un torneo de cada disciplina, cargados directamente (sin inscripción, por lo
-que sin ingresos ni premios registrados).
+---
 
-Los cinco torneos inician en juego, con sus eventos programados y al menos un
-resultado ya registrado, salvo el torneo de relevos, cuya carrera única aún no
-tiene resultado: registrarlo finalizaría el torneo y entregaría su premio, y
-los datos iniciales no deben registrar premios; los puntos de relevos se
-demuestran en la suite de pruebas. Los datos iniciales muestran el empate de
-fútbol sala (Jaguares 1-1 Serpientes, 1 punto cada uno), la victoria en tiempo
-reglamentario de fútbol sala con penales (Halcones 2-1 Serpientes, 3 puntos
-como en fútbol sala), el desempate por diferencia (fútbol sala: Los Tigres +3
-frente a Halcones +2, ambos con 3 puntos), el desempate por victorias (fútbol
-sala con penales: Los Tigres y Jaguares con 3 puntos y 1 victoria frente a
-Cóndores con 3 puntos y 0 victorias) y un encuentro de fútbol sala con penales
-definido por penales. El ranking inicial es Alfa 20, Beta 12 y Gamma 3.
+## 📊 Datos iniciales de prueba
 
-## Repositorio público
+Al iniciar, el sistema carga en memoria un escenario preconfigurado con **6 participantes** pertenecientes a **3 empresas** (`Alfa`, `Beta` y `Gamma`) y **5 torneos** (uno por cada disciplina).
 
-https://github.com/jacobjuarezguerra/ArenaGT
+* **Estado financiero inicial:** Los participantes y torneos se cargan directamente sin proceso de inscripción, por lo que el sistema inicia sin ingresos ni premios registrados.
+* **Estado de los torneos:** Todos los torneos inician en curso con sus eventos programados y al menos un resultado registrado, **a excepción del torneo de relevos**, cuya carrera única permanece pendiente:
+  * *Motivo:* Registrar ese resultado finalizaría automáticamente el torneo y entregaría el premio correspondiente, alterando la condición inicial sin premios. El cálculo de puntos para relevos se valida directamente en la suite de pruebas.
+
+### Escenarios y desempates demostrados al iniciar
+
+* **Empate en fútbol sala:** `Jaguares 1 - 1 Serpientes` (1 punto para cada equipo).
+* **Victoria en tiempo reglamentario (fútbol sala con penales):** `Halcones 2 - 1 Serpientes` (3 puntos al ganador, equivalente al fútbol sala tradicional).
+* **Desempate por diferencia de goles (fútbol sala):** `Los Tigres` (`+3`) se posiciona por encima de `Halcones` (`+2`), ambos empatados con 3 puntos.
+* **Desempate por victorias (fútbol sala con penales):** `Los Tigres` y `Jaguares` (3 puntos y 1 victoria) superan a `Cóndores` (3 puntos y 0 victorias).
+* **Definición por penales:** Incluye un encuentro de fútbol sala con penales resuelto mediante tanda de penales.
+
+### Ranking inicial por empresa
+
+| Posición | Empresa | Puntaje Inicial |
+| :---: | :--- | :---: |
+| 1 | **Alfa** | `20` |
+| 2 | **Beta** | `12` |
+| 3 | **Gamma** | `3` |
+
+---
+
+## 🔗 Repositorio
+
+Código fuente disponible en GitHub: [github.com/jacobjuarezguerra/ArenaGT](https://github.com/jacobjuarezguerra/ArenaGT)
