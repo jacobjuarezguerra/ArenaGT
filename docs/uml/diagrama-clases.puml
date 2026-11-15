@@ -1,6 +1,5 @@
 @startuml ArenaGT_UML
-title ArenaGT - Diagrama de clases
-
+title ArenaGT - Diagrama de clases (Lab 4 - Polimorfismo)
 skinparam classAttributeIconSize 0
 skinparam packageStyle rectangle
 skinparam nodesep 35
@@ -28,6 +27,7 @@ package "arena.modelo" {
     + getNombre() : String
     + getEmpresa() : Empresa
     + equals(Object) : boolean
+    + hashCode() : int
   }
 
   interface Resultado {
@@ -52,6 +52,7 @@ package "arena.modelo" {
     + puntos(p : Participante) : int
     + diferencia(p : Participante) : int
     + victoria(p : Participante) : boolean
+    + descripcion() : String
   }
 
   class ResultadoCarrera {
@@ -61,6 +62,7 @@ package "arena.modelo" {
     + puntos(p : Participante) : int
     + diferencia(p : Participante) : int
     + victoria(p : Participante) : boolean
+    + descripcion() : String
   }
 
   class FilaTabla <<Comparable>> {
@@ -175,6 +177,7 @@ package "arena.eventos" {
     + puntosDe(p : Participante) : int
     + diferenciaDe(p : Participante) : int
     + victoriaDe(p : Participante) : boolean
+    + involucra(p : Participante) : boolean
     + compareTo(otro : Evento) : int
   }
 
@@ -197,12 +200,14 @@ package "arena.eventos" {
   class Calendario <<Iterable<Evento>>> {
     - eventos : List<Evento>
     + Calendario(eventos : Collection<Evento>)
+    + tamanio() : int
+    + estaVacio() : boolean
     + iterator() : Iterator<Evento>
   }
 }
 
 ' ============================================================
-' Torneos y contabilidad
+' Torneo y contabilidad
 ' ============================================================
 package "arena.torneo" {
   class Torneo {
@@ -224,6 +229,8 @@ package "arena.torneo" {
   class TablaPosiciones <<Iterable<FilaTabla>>> {
     - filas : List<FilaTabla>
     + TablaPosiciones(participantes, eventos)
+    + tamanio() : int
+    + estaVacia() : boolean
     + iterator() : Iterator<FilaTabla>
   }
 
@@ -241,6 +248,13 @@ package "arena.torneo" {
     + registrarPremio(t : Torneo) : boolean
     + getTotalIngresos() : double
     + getTotalPremios() : double
+    + getIngresoDe(disciplina : String) : double
+    class Premio {
+      - codigoTorneo : String
+      - nombreTorneo : String
+      - monto : double
+      + Premio(codigoTorneo, nombreTorneo, monto)
+    }
   }
 }
 
@@ -257,21 +271,25 @@ package "arena.sistema" {
     + {static} cargarDatosIniciales() : ArenaGT
     + registrarParticipante(codigo, nombre, empresa) : Participante
     + crearTorneo(codigo, nombre, disciplina) : Torneo
-    + cotizar(disciplina : String, cantidad : int) : double
-    + inscribir(torneo : String, participante : String) : double
-    + cerrarInscripciones(torneo : String) : void
+    + cotizar(disciplina, cantidad) : double
+    + inscribir(torneo, participante) : double
+    + cerrarInscripciones(torneo) : void
     + programarEvento(evento, fecha, hora, sede) : void
-    + registrarResultado(evento : String, entrada : Entrada) : Resultado
+    + registrarResultado(evento, entrada) : Resultado
     + calendarioGeneral() : Calendario
-    + calendarioTorneo(codigo : String) : Calendario
-    + calendarioParticipante(codigo : String) : Calendario
+    + calendarioTorneo(codigo) : Calendario
+    + calendarioParticipante(codigo) : Calendario
+    + getTablaPosiciones(codigo) : TablaPosiciones
     + getRankingEmpresas() : RankingEmpresas
+    + getFinanzas() : Finanzas
   }
 
   class EntradaGuion {
     - respuestas : Deque<String>
-    + leerTexto(mensaje : String) : String
-    + leerEntero(mensaje : String) : int
+    + EntradaGuion(respuestas)
+    + leerTexto(mensaje) : String
+    + leerEntero(mensaje) : int
+    + leerDecimal(mensaje) : double
   }
 }
 
@@ -279,14 +297,17 @@ package "arena.ui" {
   class Menu {
     - sistema : ArenaGT
     - entrada : Entrada
+    + Menu(sistema, entrada)
     + ejecutar() : void
   }
 
   class Consola {
     - scanner : Scanner
-    + leerTexto(mensaje : String) : String
-    + leerEntero(mensaje : String) : int
-    + leerDecimal(mensaje : String) : double
+    + Consola()
+    + leerTexto(mensaje) : String
+    + leerEntero(mensaje) : int
+    + leerDecimal(mensaje) : double
+    + cerrar() : void
   }
 }
 
@@ -356,6 +377,9 @@ Principal --> Menu
 PruebasArenaGT ..> ArenaGT
 PruebasArenaGT ..> EntradaGuion
 
+' ============================================================
+' Notas de diseño
+' ============================================================
 note right of Calendario
   El orden cronológico (fecha, hora
   y nombre de sede) se resuelve en
@@ -371,16 +395,18 @@ note right of Disciplina
 end note
 
 note bottom of ArenaGT
-  Única clase que conoce todos los
-  torneos: valida sede y participante
-  ocupados, y registra ingresos solo
-  por inscripciones efectivas.
+  Fachada: única clase que conoce
+  todos los torneos; valida sede y
+  participante ocupados, y registra
+  ingresos solo por inscripciones
+  efectivas (cotizaciones no cobran).
 end note
 
 note bottom of Torneo
-  Pasa a EN_JUEGO al cerrar inscripciones
-  y a FINALIZADO automáticamente cuando
-  todos sus eventos tienen resultado.
+  Pasa a EN_JUEGO al cerrar
+  inscripciones y a FINALIZADO
+  automáticamente cuando todos sus
+  eventos tienen resultado.
 end note
 
 @enduml
