@@ -1,0 +1,563 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="3200" height="2280" viewBox="0 0 3200 2280">
+<defs><style>.title{font-family:Segoe UI, Arial, Helvetica, sans-serif;font-size:15px;font-weight:700;fill:#17202a}.stereo{font-family:Segoe UI, Arial, Helvetica, sans-serif;font-size:12px;font-style:italic;fill:#455a64}.member{font-family:Segoe UI, Arial, Helvetica, sans-serif;font-size:12.5px;fill:#212f3d}.mult{font-family:Segoe UI, Arial, Helvetica, sans-serif;font-size:11px;fill:#37474f}.label{font-family:Segoe UI, Arial, Helvetica, sans-serif;font-size:11px;fill:#37474f}.pkg{font-family:Segoe UI, Arial, Helvetica, sans-serif;font-size:20px;font-weight:700;fill:#78909c}.note{font-family:Segoe UI, Arial, Helvetica, sans-serif;font-size:13px;fill:#37474f}</style></defs>
+<rect width="3200" height="2280" fill="#ffffff"/>
+<text x="50" y="45" class="pkg" style="font-size:27px;fill:#17202a">ArenaGT · Diagrama de clases UML</text>
+<rect x="30" y="75" width="3060" height="560" rx="12" fill="#f7fafc" stroke="#cfd8dc" stroke-width="1.2" stroke-dasharray="6,5"/>
+<text x="42" y="99" class="pkg">arena.modelo</text>
+<rect x="30" y="690" width="1400" height="940" rx="12" fill="#f7fafc" stroke="#cfd8dc" stroke-width="1.2" stroke-dasharray="6,5"/>
+<text x="42" y="714" class="pkg">arena.disciplinas</text>
+<rect x="1430" y="690" width="820" height="940" rx="12" fill="#f7fafc" stroke="#cfd8dc" stroke-width="1.2" stroke-dasharray="6,5"/>
+<text x="1442" y="714" class="pkg">arena.eventos</text>
+<rect x="280" y="1740" width="1480" height="440" rx="12" fill="#f7fafc" stroke="#cfd8dc" stroke-width="1.2" stroke-dasharray="6,5"/>
+<text x="292" y="1764" class="pkg">arena.torneo</text>
+<rect x="1790" y="1580" width="1380" height="650" rx="12" fill="#f7fafc" stroke="#cfd8dc" stroke-width="1.2" stroke-dasharray="6,5"/>
+<text x="1802" y="1604" class="pkg">arena.sistema / arena.ui</text>
+<g class="cls">
+<rect x="60" y="110" width="400" height="153" rx="5" fill="#ffffff" stroke="#2e4053" stroke-width="1.7"/>
+<path d="M 65 110 H 455 Q 460 110 460 115 V 134 H 60 V 115 Q 60 110 65 110 Z" fill="#eaf1f8"/>
+<text x="260.0" y="134" class="title" text-anchor="middle">Empresa</text>
+<line x1="60" y1="154" x2="460" y2="154" stroke="#b0bec5" stroke-width="1"/>
+<text x="70" y="170" class="member">- nombre : String</text>
+<line x1="60" y1="187" x2="460" y2="187" stroke="#b0bec5" stroke-width="1"/>
+<text x="70" y="203" class="member">+ Empresa(nombre : String)</text>
+<text x="70" y="220" class="member">+ getNombre() : String</text>
+<text x="70" y="237" class="member">+ equals(Object) : boolean</text>
+<text x="70" y="254" class="member">+ hashCode() : int</text>
+</g>
+<g class="cls">
+<rect x="500" y="110" width="400" height="204" rx="5" fill="#ffffff" stroke="#2e4053" stroke-width="1.7"/>
+<path d="M 505 110 H 895 Q 900 110 900 115 V 134 H 500 V 115 Q 500 110 505 110 Z" fill="#eaf1f8"/>
+<text x="700.0" y="134" class="title" text-anchor="middle">Participante</text>
+<line x1="500" y1="154" x2="900" y2="154" stroke="#b0bec5" stroke-width="1"/>
+<text x="510" y="170" class="member">- codigo : String</text>
+<text x="510" y="187" class="member">- nombre : String</text>
+<text x="510" y="204" class="member">- empresa : Empresa</text>
+<line x1="500" y1="221" x2="900" y2="221" stroke="#b0bec5" stroke-width="1"/>
+<text x="510" y="237" class="member">+ Participante(codigo, nombre, empresa)</text>
+<text x="510" y="254" class="member">+ getCodigo() : String</text>
+<text x="510" y="271" class="member">+ getNombre() : String</text>
+<text x="510" y="288" class="member">+ getEmpresa() : Empresa</text>
+<text x="510" y="305" class="member">+ equals(Object) : boolean</text>
+</g>
+<g class="cls">
+<rect x="980" y="110" width="400" height="147" rx="5" fill="#ffffff" stroke="#2e4053" stroke-width="1.7"/>
+<path d="M 985 110 H 1375 Q 1380 110 1380 115 V 134 H 980 V 115 Q 980 110 985 110 Z" fill="#eaf1f8"/>
+<text x="1180.0" y="134" class="title" text-anchor="middle">«interface» Resultado</text>
+<line x1="980" y1="154" x2="1380" y2="154" stroke="#b0bec5" stroke-width="1"/>
+<text x="990" y="170" class="member">+ participantes() : Collection&lt;Participante&gt;</text>
+<text x="990" y="187" class="member">+ puntos(p : Participante) : int</text>
+<text x="990" y="204" class="member">+ diferencia(p : Participante) : int</text>
+<text x="990" y="221" class="member">+ victoria(p : Participante) : boolean</text>
+<text x="990" y="238" class="member">+ descripcion() : String</text>
+</g>
+<g class="cls">
+<rect x="1400" y="110" width="400" height="221" rx="5" fill="#ffffff" stroke="#2e4053" stroke-width="1.7"/>
+<path d="M 1405 110 H 1795 Q 1800 110 1800 115 V 134 H 1400 V 115 Q 1400 110 1405 110 Z" fill="#eaf1f8"/>
+<text x="1600.0" y="134" class="title" text-anchor="middle">ResultadoEncuentro</text>
+<line x1="1400" y1="154" x2="1800" y2="154" stroke="#b0bec5" stroke-width="1"/>
+<text x="1410" y="170" class="member">- local, visitante : Participante</text>
+<text x="1410" y="187" class="member">- puntosLocal, puntosVisitante : int</text>
+<text x="1410" y="204" class="member">- diferenciaLocal, diferenciaVisitante : int</text>
+<text x="1410" y="221" class="member">- victoriaLocal, victoriaVisitante : boolean</text>
+<text x="1410" y="238" class="member">- descripcion : String</text>
+<line x1="1400" y1="255" x2="1800" y2="255" stroke="#b0bec5" stroke-width="1"/>
+<text x="1410" y="271" class="member">+ ResultadoEncuentro(...)</text>
+<text x="1410" y="288" class="member">+ puntos(p : Participante) : int</text>
+<text x="1410" y="305" class="member">+ diferencia(p : Participante) : int</text>
+<text x="1410" y="322" class="member">+ victoria(p : Participante) : boolean</text>
+</g>
+<g class="cls">
+<rect x="1830" y="110" width="400" height="170" rx="5" fill="#ffffff" stroke="#2e4053" stroke-width="1.7"/>
+<path d="M 1835 110 H 2225 Q 2230 110 2230 115 V 134 H 1830 V 115 Q 1830 110 1835 110 Z" fill="#eaf1f8"/>
+<text x="2030.0" y="134" class="title" text-anchor="middle">ResultadoCarrera</text>
+<line x1="1830" y1="154" x2="2230" y2="154" stroke="#b0bec5" stroke-width="1"/>
+<text x="1840" y="170" class="member">- estadisticas : Map&lt;Participante, Estadistica&gt;</text>
+<text x="1840" y="187" class="member">- descripcion : String</text>
+<line x1="1830" y1="204" x2="2230" y2="204" stroke="#b0bec5" stroke-width="1"/>
+<text x="1840" y="220" class="member">+ ResultadoCarrera(estadisticas, descripcion)</text>
+<text x="1840" y="237" class="member">+ puntos(p : Participante) : int</text>
+<text x="1840" y="254" class="member">+ diferencia(p : Participante) : int</text>
+<text x="1840" y="271" class="member">+ victoria(p : Participante) : boolean</text>
+</g>
+<g class="cls">
+<rect x="2260" y="110" width="400" height="113" rx="5" fill="#ffffff" stroke="#2e4053" stroke-width="1.7"/>
+<path d="M 2265 110 H 2655 Q 2660 110 2660 115 V 134 H 2260 V 115 Q 2260 110 2265 110 Z" fill="#eaf1f8"/>
+<text x="2460.0" y="134" class="title" text-anchor="middle">«interface» Entrada</text>
+<line x1="2260" y1="154" x2="2660" y2="154" stroke="#b0bec5" stroke-width="1"/>
+<text x="2270" y="170" class="member">+ leerTexto(mensaje) : String</text>
+<text x="2270" y="187" class="member">+ leerEntero(mensaje) : int</text>
+<text x="2270" y="204" class="member">+ leerDecimal(mensaje) : double</text>
+</g>
+<g class="cls">
+<rect x="980" y="420" width="400" height="171" rx="5" fill="#ffffff" stroke="#2e4053" stroke-width="1.7"/>
+<path d="M 985 420 H 1375 Q 1380 420 1380 425 V 462 H 980 V 425 Q 980 420 985 420 Z" fill="#eaf1f8"/>
+<text x="1180.0" y="444" class="title" text-anchor="middle">FilaTabla</text>
+<text x="1180.0" y="471" class="stereo" text-anchor="middle">«Comparable&lt;FilaTabla&gt;»</text>
+<line x1="980" y1="479" x2="1380" y2="479" stroke="#b0bec5" stroke-width="1"/>
+<text x="990" y="495" class="member">- participante : Participante</text>
+<text x="990" y="512" class="member">- puntos : int</text>
+<text x="990" y="529" class="member">- diferencia : int</text>
+<text x="990" y="546" class="member">- victorias : int</text>
+<line x1="980" y1="563" x2="1380" y2="563" stroke="#b0bec5" stroke-width="1"/>
+<text x="990" y="579" class="member">+ compareTo(otra : FilaTabla) : int</text>
+</g>
+<g class="cls">
+<rect x="1400" y="420" width="400" height="137" rx="5" fill="#ffffff" stroke="#2e4053" stroke-width="1.7"/>
+<path d="M 1405 420 H 1795 Q 1800 420 1800 425 V 462 H 1400 V 425 Q 1400 420 1405 420 Z" fill="#eaf1f8"/>
+<text x="1600.0" y="444" class="title" text-anchor="middle">FilaRanking</text>
+<text x="1600.0" y="471" class="stereo" text-anchor="middle">«Comparable&lt;FilaRanking&gt;»</text>
+<line x1="1400" y1="479" x2="1800" y2="479" stroke="#b0bec5" stroke-width="1"/>
+<text x="1410" y="495" class="member">- empresa : Empresa</text>
+<text x="1410" y="512" class="member">- puntos : int</text>
+<line x1="1400" y1="529" x2="1800" y2="529" stroke="#b0bec5" stroke-width="1"/>
+<text x="1410" y="545" class="member">+ compareTo(otra : FilaRanking) : int</text>
+</g>
+<g class="cls">
+<rect x="1830" y="420" width="400" height="113" rx="5" fill="#ffffff" stroke="#2e4053" stroke-width="1.7"/>
+<path d="M 1835 420 H 2225 Q 2230 420 2230 425 V 444 H 1830 V 425 Q 1830 420 1835 420 Z" fill="#eaf1f8"/>
+<text x="2030.0" y="444" class="title" text-anchor="middle">«enum» EstadoTorneo</text>
+<line x1="1830" y1="464" x2="2230" y2="464" stroke="#b0bec5" stroke-width="1"/>
+<text x="1840" y="480" class="member">EN_INSCRIPCION</text>
+<text x="1840" y="497" class="member">EN_JUEGO</text>
+<text x="1840" y="514" class="member">FINALIZADO</text>
+</g>
+<g class="cls">
+<rect x="2260" y="420" width="400" height="113" rx="5" fill="#ffffff" stroke="#2e4053" stroke-width="1.7"/>
+<path d="M 2265 420 H 2655 Q 2660 420 2660 425 V 444 H 2260 V 425 Q 2260 420 2265 420 Z" fill="#eaf1f8"/>
+<text x="2460.0" y="444" class="title" text-anchor="middle">«enum» EstadoEvento</text>
+<line x1="2260" y1="464" x2="2660" y2="464" stroke="#b0bec5" stroke-width="1"/>
+<text x="2270" y="480" class="member">SIN_PROGRAMAR</text>
+<text x="2270" y="497" class="member">PROGRAMADO</text>
+<text x="2270" y="514" class="member">FINALIZADO</text>
+</g>
+<g class="cls">
+<rect x="2680" y="420" width="360" height="79" rx="5" fill="#ffffff" stroke="#2e4053" stroke-width="1.7"/>
+<path d="M 2685 420 H 3035 Q 3040 420 3040 425 V 444 H 2680 V 425 Q 2680 420 2685 420 Z" fill="#eaf1f8"/>
+<text x="2860.0" y="444" class="title" text-anchor="middle">ReglaNegocioException</text>
+<line x1="2680" y1="464" x2="3040" y2="464" stroke="#b0bec5" stroke-width="1"/>
+<text x="2690" y="480" class="member">+ ReglaNegocioException(mensaje : String)</text>
+</g>
+<g class="cls">
+<rect x="60" y="760" width="400" height="238" rx="5" fill="#ffffff" stroke="#2e4053" stroke-width="1.7"/>
+<path d="M 65 760 H 455 Q 460 760 460 765 V 784 H 60 V 765 Q 60 760 65 760 Z" fill="#eaf1f8"/>
+<text x="260.0" y="784" class="title" text-anchor="middle">«abstract» Disciplina</text>
+<line x1="60" y1="804" x2="460" y2="804" stroke="#b0bec5" stroke-width="1"/>
+<text x="70" y="820" class="member">- nombre : String</text>
+<text x="70" y="837" class="member">- minParticipantes : int</text>
+<text x="70" y="854" class="member">- maxParticipantes : int</text>
+<text x="70" y="871" class="member">- cuota : double</text>
+<line x1="60" y1="888" x2="460" y2="888" stroke="#b0bec5" stroke-width="1"/>
+<text x="70" y="904" class="member">+ {abstract} generarEventos(torneo) : List&lt;Evento&gt;</text>
+<text x="70" y="921" class="member">+ getNombre() : String</text>
+<text x="70" y="938" class="member">+ getMinParticipantes() : int</text>
+<text x="70" y="955" class="member">+ getMaxParticipantes() : int</text>
+<text x="70" y="972" class="member">+ getCuota() : double</text>
+<text x="70" y="989" class="member">+ calcularPremio(inscritos : int) : double</text>
+</g>
+<g class="cls">
+<rect x="60" y="1060" width="400" height="96" rx="5" fill="#ffffff" stroke="#2e4053" stroke-width="1.7"/>
+<path d="M 65 1060 H 455 Q 460 1060 460 1065 V 1084 H 60 V 1065 Q 60 1060 65 1060 Z" fill="#eaf1f8"/>
+<text x="260.0" y="1084" class="title" text-anchor="middle">«abstract» DisciplinaEncuentro</text>
+<line x1="60" y1="1104" x2="460" y2="1104" stroke="#b0bec5" stroke-width="1"/>
+<text x="70" y="1120" class="member">+ generarEventos(torneo) : List&lt;Evento&gt;</text>
+<text x="70" y="1137" class="member">+ {abstract} leerResultado(e, entrada) : Resultado</text>
+</g>
+<g class="cls">
+<rect x="520" y="1060" width="400" height="96" rx="5" fill="#ffffff" stroke="#2e4053" stroke-width="1.7"/>
+<path d="M 525 1060 H 915 Q 920 1060 920 1065 V 1084 H 520 V 1065 Q 520 1060 525 1060 Z" fill="#eaf1f8"/>
+<text x="720.0" y="1084" class="title" text-anchor="middle">«abstract» DisciplinaCarrera</text>
+<line x1="520" y1="1104" x2="920" y2="1104" stroke="#b0bec5" stroke-width="1"/>
+<text x="530" y="1120" class="member">+ generarEventos(torneo) : List&lt;Evento&gt;</text>
+<text x="530" y="1137" class="member">+ {abstract} leerResultado(c, entrada) : Resultado</text>
+</g>
+<g class="cls">
+<rect x="60" y="1290" width="400" height="113" rx="5" fill="#ffffff" stroke="#2e4053" stroke-width="1.7"/>
+<path d="M 65 1290 H 455 Q 460 1290 460 1295 V 1314 H 60 V 1295 Q 60 1290 65 1290 Z" fill="#eaf1f8"/>
+<text x="260.0" y="1314" class="title" text-anchor="middle">FutbolSala</text>
+<line x1="60" y1="1334" x2="460" y2="1334" stroke="#b0bec5" stroke-width="1"/>
+<text x="70" y="1350" class="member">+ FutbolSala()</text>
+<text x="70" y="1367" class="member">+ leerResultado(e, entrada) : Resultado</text>
+<text x="70" y="1384" class="member"># construirResultado(...) : Resultado</text>
+</g>
+<g class="cls">
+<rect x="60" y="1510" width="400" height="96" rx="5" fill="#ffffff" stroke="#2e4053" stroke-width="1.7"/>
+<path d="M 65 1510 H 455 Q 460 1510 460 1515 V 1534 H 60 V 1515 Q 60 1510 65 1510 Z" fill="#eaf1f8"/>
+<text x="260.0" y="1534" class="title" text-anchor="middle">FutbolSalaPenales</text>
+<line x1="60" y1="1554" x2="460" y2="1554" stroke="#b0bec5" stroke-width="1"/>
+<text x="70" y="1570" class="member">+ FutbolSalaPenales()</text>
+<text x="70" y="1587" class="member">+ leerResultado(e, entrada) : Resultado</text>
+</g>
+<g class="cls">
+<rect x="520" y="1290" width="400" height="96" rx="5" fill="#ffffff" stroke="#2e4053" stroke-width="1.7"/>
+<path d="M 525 1290 H 915 Q 920 1290 920 1295 V 1314 H 520 V 1295 Q 520 1290 525 1290 Z" fill="#eaf1f8"/>
+<text x="720.0" y="1314" class="title" text-anchor="middle">Baloncesto</text>
+<line x1="520" y1="1334" x2="920" y2="1334" stroke="#b0bec5" stroke-width="1"/>
+<text x="530" y="1350" class="member">+ Baloncesto()</text>
+<text x="530" y="1367" class="member">+ leerResultado(e, entrada) : Resultado</text>
+</g>
+<g class="cls">
+<rect x="960" y="1290" width="400" height="96" rx="5" fill="#ffffff" stroke="#2e4053" stroke-width="1.7"/>
+<path d="M 965 1290 H 1355 Q 1360 1290 1360 1295 V 1314 H 960 V 1295 Q 960 1290 965 1290 Z" fill="#eaf1f8"/>
+<text x="1160.0" y="1314" class="title" text-anchor="middle">Voleibol</text>
+<line x1="960" y1="1334" x2="1360" y2="1334" stroke="#b0bec5" stroke-width="1"/>
+<text x="970" y="1350" class="member">+ Voleibol()</text>
+<text x="970" y="1367" class="member">+ leerResultado(e, entrada) : Resultado</text>
+</g>
+<g class="cls">
+<rect x="520" y="1510" width="400" height="96" rx="5" fill="#ffffff" stroke="#2e4053" stroke-width="1.7"/>
+<path d="M 525 1510 H 915 Q 920 1510 920 1515 V 1534 H 520 V 1515 Q 520 1510 525 1510 Z" fill="#eaf1f8"/>
+<text x="720.0" y="1534" class="title" text-anchor="middle">Relevos</text>
+<line x1="520" y1="1554" x2="920" y2="1554" stroke="#b0bec5" stroke-width="1"/>
+<text x="530" y="1570" class="member">+ Relevos()</text>
+<text x="530" y="1587" class="member">+ leerResultado(c, entrada) : Resultado</text>
+</g>
+<g class="cls">
+<rect x="1460" y="760" width="400" height="375" rx="5" fill="#ffffff" stroke="#2e4053" stroke-width="1.7"/>
+<path d="M 1465 760 H 1855 Q 1860 760 1860 765 V 802 H 1460 V 765 Q 1460 760 1465 760 Z" fill="#eaf1f8"/>
+<text x="1660.0" y="784" class="title" text-anchor="middle">«abstract» Evento</text>
+<text x="1660.0" y="811" class="stereo" text-anchor="middle">«Comparable&lt;Evento&gt;»</text>
+<line x1="1460" y1="819" x2="1860" y2="819" stroke="#b0bec5" stroke-width="1"/>
+<text x="1470" y="835" class="member">- codigo : String</text>
+<text x="1470" y="852" class="member">- torneo : Torneo</text>
+<text x="1470" y="869" class="member">- participantes : List&lt;Participante&gt;</text>
+<text x="1470" y="886" class="member">- fecha : LocalDate</text>
+<text x="1470" y="903" class="member">- hora : int</text>
+<text x="1470" y="920" class="member">- sede : String</text>
+<text x="1470" y="937" class="member">- estado : EstadoEvento</text>
+<text x="1470" y="954" class="member">- resultado : Resultado</text>
+<line x1="1460" y1="971" x2="1860" y2="971" stroke="#b0bec5" stroke-width="1"/>
+<text x="1470" y="987" class="member">+ {abstract} getTipoEvento() : String</text>
+<text x="1470" y="1004" class="member">+ {abstract} getDescripcion() : String</text>
+<text x="1470" y="1021" class="member">+ {abstract} leerResultado(entrada) : Resultado</text>
+<text x="1470" y="1038" class="member">+ aplicarProgramacion(fecha, hora, sede) : void</text>
+<text x="1470" y="1055" class="member">+ registrarResultado(r : Resultado) : void</text>
+<text x="1470" y="1072" class="member">+ puntosDe(p) : int</text>
+<text x="1470" y="1089" class="member">+ diferenciaDe(p) : int</text>
+<text x="1470" y="1106" class="member">+ victoriaDe(p) : boolean</text>
+<text x="1470" y="1123" class="member">+ compareTo(otro) : int</text>
+</g>
+<g class="cls">
+<rect x="1460" y="1270" width="400" height="187" rx="5" fill="#ffffff" stroke="#2e4053" stroke-width="1.7"/>
+<path d="M 1465 1270 H 1855 Q 1860 1270 1860 1275 V 1294 H 1460 V 1275 Q 1460 1270 1465 1270 Z" fill="#eaf1f8"/>
+<text x="1660.0" y="1294" class="title" text-anchor="middle">Encuentro</text>
+<line x1="1460" y1="1314" x2="1860" y2="1314" stroke="#b0bec5" stroke-width="1"/>
+<text x="1470" y="1330" class="member">- disciplina : DisciplinaEncuentro</text>
+<text x="1470" y="1347" class="member">- local : Participante</text>
+<text x="1470" y="1364" class="member">- visitante : Participante</text>
+<line x1="1460" y1="1381" x2="1860" y2="1381" stroke="#b0bec5" stroke-width="1"/>
+<text x="1470" y="1397" class="member">+ Encuentro(codigo, torneo, disciplina, local, visitante)</text>
+<text x="1470" y="1414" class="member">+ leerResultado(entrada) : Resultado</text>
+<text x="1470" y="1431" class="member">+ getLocal() : Participante</text>
+<text x="1470" y="1448" class="member">+ getVisitante() : Participante</text>
+</g>
+<g class="cls">
+<rect x="1900" y="1270" width="400" height="119" rx="5" fill="#ffffff" stroke="#2e4053" stroke-width="1.7"/>
+<path d="M 1905 1270 H 2295 Q 2300 1270 2300 1275 V 1294 H 1900 V 1275 Q 1900 1270 1905 1270 Z" fill="#eaf1f8"/>
+<text x="2100.0" y="1294" class="title" text-anchor="middle">Carrera</text>
+<line x1="1900" y1="1314" x2="2300" y2="1314" stroke="#b0bec5" stroke-width="1"/>
+<text x="1910" y="1330" class="member">- disciplina : DisciplinaCarrera</text>
+<line x1="1900" y1="1347" x2="2300" y2="1347" stroke="#b0bec5" stroke-width="1"/>
+<text x="1910" y="1363" class="member">+ Carrera(codigo, torneo, disciplina, participantes)</text>
+<text x="1910" y="1380" class="member">+ leerResultado(entrada) : Resultado</text>
+</g>
+<g class="cls">
+<rect x="1900" y="1510" width="400" height="137" rx="5" fill="#ffffff" stroke="#2e4053" stroke-width="1.7"/>
+<path d="M 1905 1510 H 2295 Q 2300 1510 2300 1515 V 1552 H 1900 V 1515 Q 1900 1510 1905 1510 Z" fill="#eaf1f8"/>
+<text x="2100.0" y="1534" class="title" text-anchor="middle">Calendario</text>
+<text x="2100.0" y="1561" class="stereo" text-anchor="middle">«Iterable&lt;Evento&gt;»</text>
+<line x1="1900" y1="1569" x2="2300" y2="1569" stroke="#b0bec5" stroke-width="1"/>
+<text x="1910" y="1585" class="member">- eventos : List&lt;Evento&gt;</text>
+<line x1="1900" y1="1602" x2="2300" y2="1602" stroke="#b0bec5" stroke-width="1"/>
+<text x="1910" y="1618" class="member">+ Calendario(eventos : Collection&lt;Evento&gt;)</text>
+<text x="1910" y="1635" class="member">+ iterator() : Iterator&lt;Evento&gt;</text>
+</g>
+<g class="cls">
+<rect x="960" y="1780" width="400" height="289" rx="5" fill="#ffffff" stroke="#2e4053" stroke-width="1.7"/>
+<path d="M 965 1780 H 1355 Q 1360 1780 1360 1785 V 1804 H 960 V 1785 Q 960 1780 965 1780 Z" fill="#eaf1f8"/>
+<text x="1160.0" y="1804" class="title" text-anchor="middle">Torneo</text>
+<line x1="960" y1="1824" x2="1360" y2="1824" stroke="#b0bec5" stroke-width="1"/>
+<text x="970" y="1840" class="member">- codigo : String</text>
+<text x="970" y="1857" class="member">- nombre : String</text>
+<text x="970" y="1874" class="member">- disciplina : Disciplina</text>
+<text x="970" y="1891" class="member">- estado : EstadoTorneo</text>
+<text x="970" y="1908" class="member">- participantes : List&lt;Participante&gt;</text>
+<text x="970" y="1925" class="member">- eventos : List&lt;Evento&gt;</text>
+<line x1="960" y1="1942" x2="1360" y2="1942" stroke="#b0bec5" stroke-width="1"/>
+<text x="970" y="1958" class="member">+ Torneo(codigo, nombre, disciplina)</text>
+<text x="970" y="1975" class="member">+ inscribir(p : Participante) : void</text>
+<text x="970" y="1992" class="member">+ cerrarInscripciones() : void</text>
+<text x="970" y="2009" class="member">+ verificarFinalizacion() : boolean</text>
+<text x="970" y="2026" class="member">+ getTablaPosiciones() : TablaPosiciones</text>
+<text x="970" y="2043" class="member">+ getCampeon() : Participante</text>
+<text x="970" y="2060" class="member">+ getPremio() : double</text>
+</g>
+<g class="cls">
+<rect x="300" y="2060" width="400" height="137" rx="5" fill="#ffffff" stroke="#2e4053" stroke-width="1.7"/>
+<path d="M 305 2060 H 695 Q 700 2060 700 2065 V 2102 H 300 V 2065 Q 300 2060 305 2060 Z" fill="#eaf1f8"/>
+<text x="500.0" y="2084" class="title" text-anchor="middle">TablaPosiciones</text>
+<text x="500.0" y="2111" class="stereo" text-anchor="middle">«Iterable&lt;FilaTabla&gt;»</text>
+<line x1="300" y1="2119" x2="700" y2="2119" stroke="#b0bec5" stroke-width="1"/>
+<text x="310" y="2135" class="member">- filas : List&lt;FilaTabla&gt;</text>
+<line x1="300" y1="2152" x2="700" y2="2152" stroke="#b0bec5" stroke-width="1"/>
+<text x="310" y="2168" class="member">+ TablaPosiciones(participantes, eventos)</text>
+<text x="310" y="2185" class="member">+ iterator() : Iterator&lt;FilaTabla&gt;</text>
+</g>
+<g class="cls">
+<rect x="720" y="2060" width="400" height="137" rx="5" fill="#ffffff" stroke="#2e4053" stroke-width="1.7"/>
+<path d="M 725 2060 H 1115 Q 1120 2060 1120 2065 V 2102 H 720 V 2065 Q 720 2060 725 2060 Z" fill="#eaf1f8"/>
+<text x="920.0" y="2084" class="title" text-anchor="middle">RankingEmpresas</text>
+<text x="920.0" y="2111" class="stereo" text-anchor="middle">«Iterable&lt;FilaRanking&gt;»</text>
+<line x1="720" y1="2119" x2="1120" y2="2119" stroke="#b0bec5" stroke-width="1"/>
+<text x="730" y="2135" class="member">- filas : List&lt;FilaRanking&gt;</text>
+<line x1="720" y1="2152" x2="1120" y2="2152" stroke="#b0bec5" stroke-width="1"/>
+<text x="730" y="2168" class="member">+ RankingEmpresas(participantes, torneos)</text>
+<text x="730" y="2185" class="member">+ iterator() : Iterator&lt;FilaRanking&gt;</text>
+</g>
+<g class="cls">
+<rect x="1140" y="2060" width="400" height="187" rx="5" fill="#ffffff" stroke="#2e4053" stroke-width="1.7"/>
+<path d="M 1145 2060 H 1535 Q 1540 2060 1540 2065 V 2084 H 1140 V 2065 Q 1140 2060 1145 2060 Z" fill="#eaf1f8"/>
+<text x="1340.0" y="2084" class="title" text-anchor="middle">Finanzas</text>
+<line x1="1140" y1="2104" x2="1540" y2="2104" stroke="#b0bec5" stroke-width="1"/>
+<text x="1150" y="2120" class="member">- ingresosPorDisciplina : Map&lt;String, Double&gt;</text>
+<text x="1150" y="2137" class="member">- premios : List&lt;Premio&gt;</text>
+<text x="1150" y="2154" class="member">- totalIngresos : double</text>
+<line x1="1140" y1="2171" x2="1540" y2="2171" stroke="#b0bec5" stroke-width="1"/>
+<text x="1150" y="2187" class="member">+ registrarIngreso(d, monto) : void</text>
+<text x="1150" y="2204" class="member">+ registrarPremio(t : Torneo) : boolean</text>
+<text x="1150" y="2221" class="member">+ getTotalIngresos() : double</text>
+<text x="1150" y="2238" class="member">+ getTotalPremios() : double</text>
+</g>
+<g class="cls">
+<rect x="1830" y="1750" width="400" height="357" rx="5" fill="#ffffff" stroke="#2e4053" stroke-width="1.7"/>
+<path d="M 1835 1750 H 2225 Q 2230 1750 2230 1755 V 1774 H 1830 V 1755 Q 1830 1750 1835 1750 Z" fill="#eaf1f8"/>
+<text x="2030.0" y="1774" class="title" text-anchor="middle">ArenaGT</text>
+<line x1="1830" y1="1794" x2="2230" y2="1794" stroke="#b0bec5" stroke-width="1"/>
+<text x="1840" y="1810" class="member">- participantes : Map&lt;String, Participante&gt;</text>
+<text x="1840" y="1827" class="member">- torneos : Map&lt;String, Torneo&gt;</text>
+<text x="1840" y="1844" class="member">- empresas : Map&lt;String, Empresa&gt;</text>
+<text x="1840" y="1861" class="member">- disciplinas : List&lt;Disciplina&gt;</text>
+<text x="1840" y="1878" class="member">- finanzas : Finanzas</text>
+<line x1="1830" y1="1895" x2="2230" y2="1895" stroke="#b0bec5" stroke-width="1"/>
+<text x="1840" y="1911" class="member">+ {static} cargarDatosIniciales() : ArenaGT</text>
+<text x="1840" y="1928" class="member">+ registrarParticipante(codigo, nombre, empresa)</text>
+<text x="1840" y="1945" class="member">+ crearTorneo(codigo, nombre, disciplina) : Torneo</text>
+<text x="1840" y="1962" class="member">+ cotizar(disciplina, cantidad) : double</text>
+<text x="1840" y="1979" class="member">+ inscribir(torneo, participante) : double</text>
+<text x="1840" y="1996" class="member">+ cerrarInscripciones(torneo) : void</text>
+<text x="1840" y="2013" class="member">+ programarEvento(evento, fecha, hora, sede) : void</text>
+<text x="1840" y="2030" class="member">+ registrarResultado(evento, entrada) : Resultado</text>
+<text x="1840" y="2047" class="member">+ calendarioGeneral() : Calendario</text>
+<text x="1840" y="2064" class="member">+ calendarioTorneo(codigo) : Calendario</text>
+<text x="1840" y="2081" class="member">+ calendarioParticipante(codigo) : Calendario</text>
+<text x="1840" y="2098" class="member">+ getRankingEmpresas() : RankingEmpresas</text>
+</g>
+<g class="cls">
+<rect x="2320" y="1660" width="400" height="119" rx="5" fill="#ffffff" stroke="#2e4053" stroke-width="1.7"/>
+<path d="M 2325 1660 H 2715 Q 2720 1660 2720 1665 V 1684 H 2320 V 1665 Q 2320 1660 2325 1660 Z" fill="#eaf1f8"/>
+<text x="2520.0" y="1684" class="title" text-anchor="middle">Menu</text>
+<line x1="2320" y1="1704" x2="2720" y2="1704" stroke="#b0bec5" stroke-width="1"/>
+<text x="2330" y="1720" class="member">- sistema : ArenaGT</text>
+<text x="2330" y="1737" class="member">- entrada : Entrada</text>
+<line x1="2320" y1="1754" x2="2720" y2="1754" stroke="#b0bec5" stroke-width="1"/>
+<text x="2330" y="1770" class="member">+ ejecutar() : void</text>
+</g>
+<g class="cls">
+<rect x="2780" y="1450" width="400" height="153" rx="5" fill="#ffffff" stroke="#2e4053" stroke-width="1.7"/>
+<path d="M 2785 1450 H 3175 Q 3180 1450 3180 1455 V 1474 H 2780 V 1455 Q 2780 1450 2785 1450 Z" fill="#eaf1f8"/>
+<text x="2980.0" y="1474" class="title" text-anchor="middle">Consola</text>
+<line x1="2780" y1="1494" x2="3180" y2="1494" stroke="#b0bec5" stroke-width="1"/>
+<text x="2790" y="1510" class="member">- scanner : Scanner</text>
+<line x1="2780" y1="1527" x2="3180" y2="1527" stroke="#b0bec5" stroke-width="1"/>
+<text x="2790" y="1543" class="member">+ leerTexto(mensaje) : String</text>
+<text x="2790" y="1560" class="member">+ leerEntero(mensaje) : int</text>
+<text x="2790" y="1577" class="member">+ leerDecimal(mensaje) : double</text>
+<text x="2790" y="1594" class="member">+ cerrar() : void</text>
+</g>
+<g class="cls">
+<rect x="2780" y="1690" width="400" height="136" rx="5" fill="#ffffff" stroke="#2e4053" stroke-width="1.7"/>
+<path d="M 2785 1690 H 3175 Q 3180 1690 3180 1695 V 1714 H 2780 V 1695 Q 2780 1690 2785 1690 Z" fill="#eaf1f8"/>
+<text x="2980.0" y="1714" class="title" text-anchor="middle">EntradaGuion</text>
+<line x1="2780" y1="1734" x2="3180" y2="1734" stroke="#b0bec5" stroke-width="1"/>
+<text x="2790" y="1750" class="member">- respuestas : Deque&lt;String&gt;</text>
+<line x1="2780" y1="1767" x2="3180" y2="1767" stroke="#b0bec5" stroke-width="1"/>
+<text x="2790" y="1783" class="member">+ leerTexto(mensaje) : String</text>
+<text x="2790" y="1800" class="member">+ leerEntero(mensaje) : int</text>
+<text x="2790" y="1817" class="member">+ leerDecimal(mensaje) : double</text>
+</g>
+<g class="cls">
+<rect x="2320" y="1950" width="400" height="79" rx="5" fill="#ffffff" stroke="#2e4053" stroke-width="1.7"/>
+<path d="M 2325 1950 H 2715 Q 2720 1950 2720 1955 V 1974 H 2320 V 1955 Q 2320 1950 2325 1950 Z" fill="#eaf1f8"/>
+<text x="2520.0" y="1974" class="title" text-anchor="middle">Principal</text>
+<line x1="2320" y1="1994" x2="2720" y2="1994" stroke="#b0bec5" stroke-width="1"/>
+<text x="2330" y="2010" class="member">+ {static} main(args : String[]) : void</text>
+</g>
+<g class="cls">
+<rect x="2700" y="2010" width="420" height="79" rx="5" fill="#ffffff" stroke="#2e4053" stroke-width="1.7"/>
+<path d="M 2705 2010 H 3115 Q 3120 2010 3120 2015 V 2034 H 2700 V 2015 Q 2700 2010 2705 2010 Z" fill="#eaf1f8"/>
+<text x="2910.0" y="2034" class="title" text-anchor="middle">PruebasArenaGT</text>
+<line x1="2700" y1="2054" x2="3120" y2="2054" stroke="#b0bec5" stroke-width="1"/>
+<text x="2710" y="2070" class="member">+ {static} main(args : String[]) : void</text>
+</g>
+<line x1="260.0" y1="1000.0" x2="260.0" y2="1058.0" stroke="#2e4053" stroke-width="1.5"/>
+<polygon points="260.0,1058.0 254.7,1046.1 265.3,1046.1" fill="white" stroke="#2e4053" stroke-width="1.4"/>
+<line x1="462.0" y1="979.6" x2="619.6" y2="1058.0" stroke="#2e4053" stroke-width="1.5"/>
+<polygon points="619.6,1058.0 606.6,1057.5 611.3,1048.0" fill="white" stroke="#2e4053" stroke-width="1.4"/>
+<line x1="260.0" y1="1158.0" x2="260.0" y2="1288.0" stroke="#2e4053" stroke-width="1.5"/>
+<polygon points="260.0,1288.0 254.7,1276.1 265.3,1276.1" fill="white" stroke="#2e4053" stroke-width="1.4"/>
+<line x1="260.0" y1="1405.0" x2="260.0" y2="1508.0" stroke="#2e4053" stroke-width="1.5"/>
+<polygon points="260.0,1508.0 254.7,1496.1 265.3,1496.1" fill="white" stroke="#2e4053" stroke-width="1.4"/>
+<line x1="360.0" y1="1158.0" x2="620.0" y2="1288.0" stroke="#2e4053" stroke-width="1.5"/>
+<polygon points="620.0,1288.0 607.0,1287.4 611.8,1278.0" fill="white" stroke="#2e4053" stroke-width="1.4"/>
+<line x1="455.7" y1="1158.0" x2="964.3" y2="1288.0" stroke="#2e4053" stroke-width="1.5"/>
+<polygon points="964.3,1288.0 951.5,1290.2 954.2,1279.9" fill="white" stroke="#2e4053" stroke-width="1.4"/>
+<line x1="720.0" y1="1158.0" x2="720.0" y2="1508.0" stroke="#2e4053" stroke-width="1.5"/>
+<polygon points="720.0,1508.0 714.7,1496.1 725.3,1496.1" fill="white" stroke="#2e4053" stroke-width="1.4"/>
+<line x1="1660.0" y1="1137.0" x2="1660.0" y2="1268.0" stroke="#2e4053" stroke-width="1.5"/>
+<polygon points="1660.0,1268.0 1654.7,1256.1 1665.3,1256.1" fill="white" stroke="#2e4053" stroke-width="1.4"/>
+<line x1="1862.0" y1="1122.9" x2="2029.2" y2="1268.0" stroke="#2e4053" stroke-width="1.5"/>
+<polygon points="2029.2,1268.0 2016.7,1264.2 2023.7,1256.2" fill="white" stroke="#2e4053" stroke-width="1.4"/>
+<line x1="1382.0" y1="201.3" x2="1398.0" y2="202.7" stroke="#546e7a" stroke-width="1.5" stroke-dasharray="9,7"/>
+<polygon points="1398.0,202.7 1385.7,206.9 1386.6,196.4" fill="white" stroke="#2e4053" stroke-width="1.4"/>
+<line x1="1382.0" y1="186.2" x2="1828.0" y2="192.3" stroke="#546e7a" stroke-width="1.5" stroke-dasharray="9,7"/>
+<polygon points="1828.0,192.3 1816.1,197.4 1816.2,186.8" fill="white" stroke="#2e4053" stroke-width="1.4"/>
+<line x1="2482.4" y1="225.0" x2="2950.0" y2="1448.0" stroke="#546e7a" stroke-width="1.5" stroke-dasharray="9,7"/>
+<polygon points="2950.0,1448.0 2940.8,1438.8 2950.7,1435.0" fill="white" stroke="#2e4053" stroke-width="1.4"/>
+<line x1="2479.1" y1="225.0" x2="2957.1" y2="1688.0" stroke="#546e7a" stroke-width="1.5" stroke-dasharray="9,7"/>
+<polygon points="2957.1,1688.0 2948.4,1678.4 2958.5,1675.1" fill="white" stroke="#2e4053" stroke-width="1.4"/>
+<line x1="498.0" y1="200.3" x2="462.0" y2="198.2" stroke="#546e7a" stroke-width="1.5"/>
+<polyline points="473.4,194.4 462.0,198.2 472.9,203.3" fill="none" stroke="#546e7a" stroke-width="1.5"/>
+<text x="493.7" y="194.0" class="mult">0..*</text>
+<text x="466.3" y="192.5" class="mult">1</text>
+<line x1="1398.0" y1="218.6" x2="902.0" y2="213.9" stroke="#546e7a" stroke-width="1.5"/>
+<polyline points="913.2,209.6 902.0,213.9 913.1,218.5" fill="none" stroke="#546e7a" stroke-width="1.5"/>
+<text x="961.5" y="208.5" class="mult">2</text>
+<line x1="1828.0" y1="197.6" x2="902.0" y2="209.4" stroke="#546e7a" stroke-width="1.5"/>
+<polyline points="913.1,204.8 902.0,209.4 913.2,213.7" fill="none" stroke="#546e7a" stroke-width="1.5"/>
+<text x="1013.1" y="202.0" class="mult">1..*</text>
+<line x1="1036.9" y1="418.0" x2="870.1" y2="316.0" stroke="#546e7a" stroke-width="1.5"/>
+<polyline points="881.9,318.0 870.1,316.0 877.3,325.6" fill="none" stroke="#546e7a" stroke-width="1.5"/>
+<text x="890.1" y="322.2" class="mult">1</text>
+<line x1="1398.0" y1="443.0" x2="462.0" y2="232.0" stroke="#546e7a" stroke-width="1.5"/>
+<polyline points="473.8,230.1 462.0,232.0 471.9,238.8" fill="none" stroke="#546e7a" stroke-width="1.5"/>
+<text x="574.3" y="251.3" class="mult">1</text>
+<line x1="1540.9" y1="758.0" x2="1227.4" y2="259.0" stroke="#546e7a" stroke-width="1.5"/>
+<polyline points="1237.1,266.1 1227.4,259.0 1229.6,270.8" fill="none" stroke="#546e7a" stroke-width="1.5"/>
+<line x1="1563.0" y1="1137.0" x2="1235.0" y2="1778.0" stroke="#546e7a" stroke-width="1.5"/>
+<polyline points="1236.1,1766.1 1235.0,1778.0 1244.0,1770.1" fill="none" stroke="#546e7a" stroke-width="1.5"/>
+<text x="1523.7" y="1207.9" class="mult">0..*</text>
+<text x="1274.3" y="1695.1" class="mult">1</text>
+<line x1="1862.0" y1="828.6" x2="2360.6" y2="535.0" stroke="#546e7a" stroke-width="1.5"/>
+<polyline points="2353.3,544.5 2360.6,535.0 2348.8,536.8" fill="none" stroke="#546e7a" stroke-width="1.5"/>
+<line x1="1458.0" y1="1326.6" x2="462.0" y2="1144.9" stroke="#546e7a" stroke-width="1.5"/>
+<polyline points="473.8,1142.5 462.0,1144.9 472.2,1151.2" fill="none" stroke="#546e7a" stroke-width="1.5"/>
+<text x="581.5" y="1160.7" class="mult">1</text>
+<line x1="1898.0" y1="1297.1" x2="922.0" y2="1140.4" stroke="#546e7a" stroke-width="1.5"/>
+<polyline points="933.7,1137.8 922.0,1140.4 932.3,1146.6" fill="none" stroke="#546e7a" stroke-width="1.5"/>
+<text x="1039.1" y="1153.2" class="mult">1</text>
+<line x1="1235.0" y1="1778.0" x2="1563.0" y2="1137.0" stroke="#546e7a" stroke-width="1.5"/>
+<polygon points="1235.0,1778.0 1236.3,1787.7 1227.7,1792.2 1226.3,1782.6" fill="#2e4053" stroke="#2e4053" stroke-width="1.3"/>
+<text x="1274.3" y="1695.1" class="mult">1</text>
+<text x="1523.7" y="1207.9" class="mult">0..*</text>
+<line x1="1120.6" y1="1778.0" x2="727.9" y2="316.0" stroke="#546e7a" stroke-width="1.5"/>
+<polygon points="1120.6,1778.0 1128.1,1784.3 1124.8,1793.5 1117.3,1787.2" fill="white" stroke="#2e4053" stroke-width="1.3"/>
+<text x="1073.5" y="1596.6" class="mult">1</text>
+<text x="775.1" y="485.4" class="mult">2..8</text>
+<line x1="1033.9" y1="1778.0" x2="364.2" y2="1000.0" stroke="#546e7a" stroke-width="1.5"/>
+<polyline points="374.8,1005.5 364.2,1000.0 368.1,1011.3" fill="none" stroke="#546e7a" stroke-width="1.5"/>
+<text x="953.5" y="1678.6" class="mult">0..*</text>
+<text x="444.5" y="1087.4" class="mult">1</text>
+<line x1="1248.0" y1="1778.0" x2="1994.9" y2="535.0" stroke="#546e7a" stroke-width="1.5"/>
+<polyline points="1992.9,546.8 1994.9,535.0 1985.3,542.3" fill="none" stroke="#546e7a" stroke-width="1.5"/>
+<line x1="529.5" y1="2058.0" x2="1143.3" y2="593.0" stroke="#546e7a" stroke-width="1.5"/>
+<polygon points="529.5,2058.0 531.6,2067.5 523.4,2072.8 521.3,2063.2" fill="#2e4053" stroke="#2e4053" stroke-width="1.3"/>
+<text x="603.2" y="1876.2" class="mult">1</text>
+<text x="1069.7" y="762.8" class="mult">0..*</text>
+<line x1="949.2" y1="2058.0" x2="1570.8" y2="559.0" stroke="#546e7a" stroke-width="1.5"/>
+<polygon points="949.2,2058.0 951.3,2067.5 943.1,2072.8 941.0,2063.2" fill="#2e4053" stroke="#2e4053" stroke-width="1.3"/>
+<text x="1023.8" y="1872.1" class="mult">1</text>
+<text x="1496.2" y="732.9" class="mult">0..*</text>
+<line x1="2050.8" y1="1508.0" x2="1792.1" y2="1137.0" stroke="#546e7a" stroke-width="1.5"/>
+<polyline points="1802.2,1143.6 1792.1,1137.0 1794.9,1148.7" fill="none" stroke="#546e7a" stroke-width="1.5"/>
+<text x="2019.8" y="1457.5" class="mult">1</text>
+<text x="1823.2" y="1175.5" class="mult">0..*</text>
+<line x1="1828.0" y1="1927.6" x2="1362.0" y2="1925.4" stroke="#546e7a" stroke-width="1.5"/>
+<polygon points="1828.0,1927.6 1836.0,1922.0 1844.0,1927.6 1836.0,1933.2" fill="white" stroke="#2e4053" stroke-width="1.3"/>
+<text x="1772.1" y="1921.3" class="mult">1</text>
+<text x="1417.9" y="1919.7" class="mult">0..*</text>
+<line x1="1890.1" y1="1748.0" x2="780.6" y2="316.0" stroke="#546e7a" stroke-width="1.5"/>
+<polygon points="1890.1,1748.0 1899.5,1750.9 1899.9,1760.6 1890.6,1757.8" fill="white" stroke="#2e4053" stroke-width="1.3"/>
+<text x="1757.0" y="1570.2" class="mult">1</text>
+<text x="913.7" y="481.8" class="mult">0..*</text>
+<line x1="1846.6" y1="1748.0" x2="339.8" y2="265.0" stroke="#546e7a" stroke-width="1.5"/>
+<polygon points="1846.6,1748.0 1856.2,1749.6 1858.0,1759.2 1848.4,1757.6" fill="white" stroke="#2e4053" stroke-width="1.3"/>
+<text x="1665.8" y="1564.0" class="mult">1</text>
+<text x="520.6" y="437.0" class="mult">0..*</text>
+<line x1="1828.0" y1="1808.7" x2="462.0" y2="998.8" stroke="#546e7a" stroke-width="1.5"/>
+<polygon points="1828.0,1808.7 1837.7,1808.0 1841.8,1816.9 1832.0,1817.6" fill="white" stroke="#2e4053" stroke-width="1.3"/>
+<text x="1664.1" y="1705.5" class="mult">1</text>
+<text x="625.9" y="1090.0" class="mult">5</text>
+<line x1="1828.0" y1="1994.4" x2="1542.0" y2="2087.6" stroke="#546e7a" stroke-width="1.5"/>
+<polygon points="1828.0,1994.4 1833.9,1986.6 1843.2,1989.4 1837.3,1997.2" fill="#2e4053" stroke="#2e4053" stroke-width="1.3"/>
+<text x="1793.7" y="1999.6" class="mult">1</text>
+<text x="1576.3" y="2070.4" class="mult">1</text>
+<line x1="2375.8" y1="1781.0" x2="2232.0" y2="1842.3" stroke="#546e7a" stroke-width="1.5"/>
+<polyline points="2240.5,1833.9 2232.0,1842.3 2244.0,1842.1" fill="none" stroke="#546e7a" stroke-width="1.5"/>
+<text x="2358.6" y="1782.4" class="mult">1</text>
+<text x="2249.3" y="1829.0" class="mult">1</text>
+<line x1="2517.6" y1="1658.0" x2="2462.3" y2="225.0" stroke="#546e7a" stroke-width="1.5"/>
+<polyline points="2467.1,236.0 2462.3,225.0 2458.2,236.3" fill="none" stroke="#546e7a" stroke-width="1.5"/>
+<text x="2511.0" y="1480.0" class="mult">1</text>
+<text x="2468.9" y="391.0" class="mult">1</text>
+<line x1="2318.0" y1="1964.4" x2="2232.0" y2="1953.6" stroke="#546e7a" stroke-width="1.5"/>
+<polyline points="2243.6,1950.6 2232.0,1953.6 2242.5,1959.4" fill="none" stroke="#546e7a" stroke-width="1.5"/>
+<text x="2307.7" y="1957.1" class="mult">1</text>
+<text x="2242.3" y="1948.9" class="mult">1</text>
+<line x1="2520.0" y1="1948.0" x2="2520.0" y2="1781.0" stroke="#546e7a" stroke-width="1.5"/>
+<polyline points="2524.5,1792.1 2520.0,1781.0 2515.5,1792.1" fill="none" stroke="#546e7a" stroke-width="1.5"/>
+<text x="2520.0" y="1922.0" class="mult">1</text>
+<text x="2520.0" y="1795.0" class="mult">1</text>
+<line x1="364.2" y1="1000.0" x2="1033.9" y2="1778.0" stroke="#546e7a" stroke-width="1.5" stroke-dasharray="9,7"/>
+<polyline points="1023.2,1772.5 1033.9,1778.0 1030.0,1766.7" fill="none" stroke="#546e7a" stroke-width="1.5"/>
+<line x1="462.0" y1="888.9" x2="1458.0" y2="937.6" stroke="#546e7a" stroke-width="1.5" stroke-dasharray="9,7"/>
+<polyline points="1446.7,941.5 1458.0,937.6 1447.1,932.6" fill="none" stroke="#546e7a" stroke-width="1.5"/>
+<line x1="1828.0" y1="1954.9" x2="702.0" y2="2102.1" stroke="#546e7a" stroke-width="1.5" stroke-dasharray="9,7"/>
+<polyline points="712.5,2096.2 702.0,2102.1 713.6,2105.1" fill="none" stroke="#546e7a" stroke-width="1.5"/>
+<line x1="1828.0" y1="1964.9" x2="1122.0" y2="2092.1" stroke="#546e7a" stroke-width="1.5" stroke-dasharray="9,7"/>
+<polyline points="1132.2,2085.7 1122.0,2092.1 1133.8,2094.5" fill="none" stroke="#546e7a" stroke-width="1.5"/>
+<line x1="2066.1" y1="1748.0" x2="2085.9" y2="1649.0" stroke="#546e7a" stroke-width="1.5" stroke-dasharray="9,7"/>
+<polyline points="2088.1,1660.8 2085.9,1649.0 2079.3,1659.1" fill="none" stroke="#546e7a" stroke-width="1.5"/>
+<line x1="2698.0" y1="2020.3" x2="2232.0" y2="1956.3" stroke="#546e7a" stroke-width="1.5" stroke-dasharray="9,7"/>
+<polyline points="2243.6,1953.4 2232.0,1956.3 2242.4,1962.2" fill="none" stroke="#546e7a" stroke-width="1.5"/>
+<line x1="2920.0" y1="2008.0" x2="2963.2" y2="1828.0" stroke="#546e7a" stroke-width="1.5" stroke-dasharray="9,7"/>
+<polyline points="2964.9,1839.9 2963.2,1828.0 2956.3,1837.8" fill="none" stroke="#546e7a" stroke-width="1.5"/>
+<rect x="1660" y="520" width="580" height="52" rx="4" fill="#fffde7" stroke="#f9a825" stroke-width="1.3"/>
+<text x="1670" y="542" class="note">El orden cronológico (fecha, hora, sede) se resuelve en</text>
+<text x="1670" y="559" class="note">Evento.compareTo. Calendario solo recorre eventos ya ordenados.</text>
+<rect x="2680" y="700" width="580" height="52" rx="4" fill="#fffde7" stroke="#f9a825" stroke-width="1.3"/>
+<text x="2690" y="722" class="note">Cada disciplina decide cupos, cuota, validación,</text>
+<text x="2690" y="739" class="note">puntos de tabla y diferencia. No hay instanceof.</text>
+<rect x="1660" y="2100" width="580" height="69" rx="4" fill="#fffde7" stroke="#f9a825" stroke-width="1.3"/>
+<text x="1670" y="2122" class="note">ArenaGT es la única clase que conoce todos los torneos:</text>
+<text x="1670" y="2139" class="note">valida conflictos de sede y participante, y registra</text>
+<text x="1670" y="2156" class="note">ingresos solo por inscripciones efectivas.</text>
+<rect x="2300" y="2150" width="580" height="69" rx="4" fill="#fffde7" stroke="#f9a825" stroke-width="1.3"/>
+<text x="2310" y="2172" class="note">TablaPosiciones, RankingEmpresas y Calendario implementan</text>
+<text x="2310" y="2189" class="note">Iterable. Evento, FilaTabla y FilaRanking implementan</text>
+<text x="2310" y="2206" class="note">Comparable. Los estereotipos lo indican en cada caja.</text>
+<g>
+<text x="50" y="2210" class="pkg" style="font-size:15px;fill:#37474f">Leyenda:</text>
+<line x1="160" y1="2204" x2="230" y2="2204" stroke="#2e4053" stroke-width="1.5"/>
+<polygon points="230,2204 217,2198 217,2210" fill="white" stroke="#2e4053"/>
+<text x="238" y="2209" class="note">herencia</text>
+<line x1="360" y1="2204" x2="430" y2="2204" stroke="#546e7a" stroke-width="1.5" stroke-dasharray="9,7"/>
+<polygon points="430,2204 417,2198 417,2210" fill="white" stroke="#2e4053"/>
+<text x="438" y="2209" class="note">implementación</text>
+<line x1="620" y1="2204" x2="690" y2="2204" stroke="#2e4053" stroke-width="1.5"/>
+<polygon points="620,2204 634,2198 648,2204 634,2210" fill="#2e4053" stroke="#2e4053"/>
+<text x="696" y="2209" class="note">composición</text>
+<line x1="860" y1="2204" x2="930" y2="2204" stroke="#2e4053" stroke-width="1.5"/>
+<polygon points="860,2204 874,2198 888,2204 874,2210" fill="white" stroke="#2e4053"/>
+<text x="896" y="2209" class="note">agregación</text>
+<text x="1060" y="2209" class="note">Los métodos abstractos se marcan con {abstract}; los métodos concretos de una subclase sobrescriben al de la superclase o interfaz.</text>
+</g>
+</svg>
