@@ -1,0 +1,14 @@
+﻿[OK]    Cuotas de inscripci├│n de las cinco disciplinas
+[OK]    Premios de las cinco disciplinas
+[OK]    Puntos y diferencia de f├║tbol sala
+[OK]    F├║tbol sala con penales
+[OK]    Baloncesto
+[OK]    Voleibol
+[OK]    Relevos con descalificaci├│n
+[OK]    Desempates y orden alfab├®tico
+[OK]    Conflictos y orden cronol├│gico
+[OK]    Estados y finalizaci├│n autom├ítica
+[OK]    Rechazos sin modificar estado ni ingresos
+[OK]    Ranking de empresas
+
+Pruebas ejecutadas: 12, fallidas: 0
