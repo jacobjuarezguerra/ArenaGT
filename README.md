@@ -1,31 +1,22 @@
 # ArenaGT — Gestión de copas deportivas
 
-Aplicación de consola en Java que organiza copas deportivas entre empresas, desarrollada como el **Lab 4 - Polimorfismo** del curso CC2008 - Programación Orientada a Objetos (Universidad del Valle de Guatemala, Ciclo 2, 2026).
+Aplicación de consola en Java desarrollada para el **Lab 4 - Polimorfismo** del curso
+**CC2008 - Programación Orientada a Objetos** (Universidad del Valle de Guatemala,
+Ciclo 2, 2026).
 
-## Estructura del proyecto
+## Contenido de la entrega
 
-```
-lab/
-├── src/arena/                 # Código fuente Java
-│   ├── Principal.java         # Clase con el método main
-│   ├── disciplina/            # Reglas de cada disciplina (Disciplina, Fútbol sala, Baloncesto, Voleibol, Relevos, ...)
-│   ├── eventos/               # Eventos del torneo (Evento, Encuentro, Carrera, Calendario)
-│   ├── modelo/                # Modelo de dominio (Participante, Empresa, Resultado, FilaTabla, ...)
-│   ├── sistema/               # Fachada del sistema y entrada (ArenaGT, EntradaGuion)
-│   ├── torneo/                # Torneo, tabla de posiciones, finanzas, ranking de empresas
-│   ├── ui/                    # Interfaz de consola (Menú, Consola)
-│   └── pruebas/               # Suite de pruebas automatizadas sin JUnit
-├── out/                       # Clases compiladas
-├── docs/
-│   ├── evidencia-pruebas.txt  # Evidencia de las 12 pruebas ejecutadas (0 fallos)
-│   └── uml/                   # Diagrama de clases UML (PlantUML + SVG)
-└── README.md                  # Este archivo
-```
+- `src/arena/…` — código fuente Java (34 archivos `.java`)
+- `out/` — clases compiladas (36 clases `.class`)
+- `docs/uml/diagrama-clases.puml` — diagrama de clases UML (fuente PlantUML)
+- `docs/uml/diagrama-clases.svg` — diagrama de clases UML (renderizado)
+- `README.md` — este archivo
 
 ## Requisitos
 
-- Java JDK 26 (o superior)
-- No se requieren librerías externas, bases de datos ni archivos de datos. Todo se conserva en memoria.
+- Java JDK 26 o superior.
+- No se requieren librerías externas, bases de datos ni archivos de datos. Todo
+  se conserva en memoria.
 
 ## Compilación
 
@@ -45,7 +36,7 @@ java -cp out arena.Principal
 
 El menú permanece disponible hasta que el usuario elige la opción `0) Salir`.
 
-### Suite de pruebas
+### Suite de pruebas (sin JUnit)
 
 ```powershell
 java -cp out arena.pruebas.PruebasArenaGT
@@ -55,20 +46,10 @@ Resultado esperado: `Pruebas ejecutadas: 12, fallidas: 0`.
 
 ## Datos iniciales
 
-El programa inicia con datos cargados directamente (sin pasar por inscripción, por lo que no hay ingresos ni premios registrados):
+El programa inicia con seis participantes de tres empresas (Alfa, Beta, Gamma) y
+un torneo de cada disciplina, cargados directamente (sin inscripción, por lo
+que sin ingresos ni premios registrados).
 
-- Seis participantes de tres empresas (Alfa, Beta, Gamma).
-- Un torneo de cada disciplina; al menos dos en juego con eventos programados y al menos un resultado registrado.
+## Repositorio público
 
-## Entregables del laboratorio
-
-- Análisis, diagrama UML y evidencia de pruebas: `docs/`
-- Código fuente: `src/arena/**/*.java`
-- URL del repositorio público en GitHub con todos los archivos `.java` y este `README.md`.
-
-## Notas de implementación
-
-- Las decisiones que dependen de la disciplina se resuelven por polimorfismo sobre clases abstractas e interfaces (no se verifica el tipo del objeto).
-- Las cotizaciones no generan ingresos ni inscriben a nadie.
-- Las operaciones rechazadas no modifican el estado previo ni los ingresos.
-- Los montos se muestran con dos decimales.
+https://github.com/jacobjuarezguerra/ArenaGT
